@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html>
+<title>Gila Almagor website</title>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <div id="fb-root"></div>
+  <script>
+    function clickCounter() {
+      if (typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+          localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "Amount of likes: " + localStorage.clickcount;
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }
+    </script>
+  <script>
+    function liked(){
+      var element = document.getElementById("like");
+      element.classList.toggle("liked");
+    }
+  </script>
 </head>
 <body>
-<div id="menu">
-<li><a href="#about">About Me</a></li>
-<li><a href="#photos">My Photos</a></li>
-<li><a href="#playlist">My Playlist</a></li>
-<li><a href="#like">Like</a></li>
-<li><a href="#qrcoder">QR code</a></li>
-<li><a href="#spa">Q&A</a></li>
-<li><a href="#contact">Contact Me</a></li>
-</div>
+  <div id="menu">
+  <a href="#about">About Me</a>
+  <a href="#photos">My Photos</a>
+  <a href="#playlist">My Playlist</a>
+  <a href="#like">Like</a>
+  <a href="#qrcoder">QR code</a>
+  <a href="#spa">Q&A</a>
+  <a href="#contact">Contact Me</a>
+  </div>
 		  
 <section id="about" class="section">
 <br/>
 <br/>
+<h1>about me</h1>
 <br/>
 <br/>
 <br/>
@@ -28,79 +55,37 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-about me
 <br/>
 <br/>
 <br/>
 </section>
-
 <section id="photos" class="section">
+<h1>my photos</h1>
+<img src="Gila_1.jpg" alt="Gila Almagor" width="200" height="240"> 
+<img src="Gila_2.jpg" alt="Gila Almagor" width="200" height="240">
+<img src="Gila_3.jpg" alt="Gila Almagor" width="200" height="240">
+<img src="Gila_4.jpg" alt="Gila Almagor" width="200" height="240">
+<img src="Gila_5.jpg" alt="Gila Almagor" width="200" height="240">
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
-<br/>
-<br/>
-<br/>
-</section>
 
+</section>
 <section id="playlist" class="section">
+<h1>my playlist</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLWkfrFkdyL1GhWaW82MSQcUqOB5N5qbu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
-<br/>
-</section>
 
+</section>
 <section id="like" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
+<h1> me a like</h1>
+<button id="like" onclick="clickCounter()">
+  <i class="fa fa-thumbs-up"></i>
+  <span class="icon">Like</span>
+</button>
+<!-- <p><button onclick="clickCounter()" type="button">Like!</button></p> -->
+<div id="result"></div>
+<!-- <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&share=false&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
 <br/>
 <br/>
 <br/>
@@ -123,7 +108,7 @@ give me a like
 <br/>
 <br/>
 <br/>
-scan my code
+<h1>scan my code</h1>
 <br/>
 <br/>
 <br/>
@@ -146,7 +131,7 @@ scan my code
 <br/>
 <br/>
 <br/>
-ans
+<h1>ans</h1>
 <br/>
 <br/>
 <br/>
@@ -169,7 +154,7 @@ ans
 <br/>
 <br/>
 <br/>
-contact me
+<h1>contact me</h1>
 <br/>
 <br/>
 <br/>
