@@ -40,7 +40,7 @@ h1 {
 span {
 	cursor: auto;
 	}
-like {
+#likeB {
 	background: #fff;
 	border: unset;
 	outline: 0;
@@ -49,10 +49,10 @@ like {
 	color: #65676b;
 	padding: 5px 10px;
 	}
-	like.liked {
+	#likeB.liked {
 	color: #0571ed;
 	}
-	like.liked i{
+	#likeB.liked i{
 	animation: anim 0.5s ease-in-out;
 	-webkit-animation: anim 0.5s ease-in-out;
 	}

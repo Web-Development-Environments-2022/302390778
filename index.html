@@ -17,14 +17,16 @@
           localStorage.clickcount = 1;
         }
         document.getElementById("result").innerHTML = "Amount of likes: " + localStorage.clickcount;
-      } else {
+      } 
+      else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
       }
+      liked()
     }
     </script>
   <script>
     function liked(){
-      var element = document.getElementById("like");
+      var element = document.getElementById("likeB");
       element.classList.toggle("liked");
     }
   </script>
@@ -79,7 +81,7 @@
 </section>
 <section id="like" class="section">
 <h1> me a like</h1>
-<button id="like" onclick="clickCounter()">
+<button id="likeB"  onclick="clickCounter()">
   <i class="fa fa-thumbs-up"></i>
   <span class="icon">Like</span>
 </button>
