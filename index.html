@@ -3,31 +3,39 @@
 <title>Gila Almagor website</title>
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="emojionearea.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
   <div id="fb-root"></div>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script src="emojionearea.min.js"></script>
   <script>
+    let flag = false
     function clickCounter() {
-      if (typeof(Storage) !== "undefined") {
-        if (localStorage.clickcount) {
-          localStorage.clickcount = Number(localStorage.clickcount)+1;
-        } else {
-          localStorage.clickcount = 1;
+      if (flag == false){
+        if (typeof(Storage) !== "undefined" ) {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+         }   else {
+            localStorage.clickcount = 1;
+          }
+          document.getElementById("result").innerHTML = "Amount of likes: " + localStorage.clickcount;
+        } 
+       else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
         }
-        document.getElementById("result").innerHTML = "Amount of likes: " + localStorage.clickcount;
-      } 
-      else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-      }
-      liked()
+        liked()
     }
-    </script>
-  <script>
+  }
     function liked(){
       var element = document.getElementById("likeB");
       element.classList.toggle("liked");
+      flag = true
     }
   </script>
 </head>
@@ -87,7 +95,7 @@ In 2008, she played the role of Lolah Baum in the 100-episode serial Dani Hollyw
 
 </section>
 <section id="like" class="section">
-<h1> me a like</h1>
+<h1>give me a like</h1>
 <button id="likeB"  onclick="clickCounter()">
   <i class="fa fa-thumbs-up"></i>
   <span class="icon">Like</span>
@@ -99,7 +107,7 @@ In 2008, she played the role of Lolah Baum in the 100-episode serial Dani Hollyw
 </section>
 
 <section id="qrcoder" class="section">
-<h1>scan my code</h1>
+<h1>scan my QR</h1>
 <img src="qr.PNG" alt="Gila Almagor" width="100" height="120"> 
 <br/>
 
@@ -136,14 +144,14 @@ In web 3.0 the web can suggest the user comments that the user want to write in 
 <section id="contact" class="section">
 <h1>contact me</h1>
 <br/>
-<h2>Send e-mail to uri@zlotkin.com:</h2>
-<form action="mailto:uri@zlotkin.com" method="post" enctype="text/plain">
+<h2>Send e-mail to urizlo@post.bgu.ac.il:</h2>
+<form action="urizlo@post.bgu.ac.il" method="post" enctype="text/plain">
 Name:<br>
 <input type="text" name="name"><br>
 E-mail:<br>
 <input type="text" name="mail"><br>
 Comment:<br>
-<input type="text" name="comment" size="50"><br><br>
+<input type="text" id="commentText" name="comment" size="100"><br><br>
 <input type="submit" value="Send">
 <input type="reset" value="Reset">
 </form>
@@ -151,7 +159,13 @@ Comment:<br>
 <br/>
 </section>
 
-
+<script>
+  $(document).ready(function(){
+    $("#commentText").emojioneArea({
+      pickerPosition: "buttom"
+    })
+  })
+</script>
 <script type="text/javascript">
 $(function(){
   $("#nav a").click(function(e){

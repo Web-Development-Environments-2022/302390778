@@ -1,5 +1,7 @@
 
-
+body {
+	background-image: url("back.jpg");
+}
 /* Add a black background color to the top navigation */
 #menu {
 	background-color: #333;
@@ -30,9 +32,10 @@
   }
 
 h1 {
-	color: #7c795d;
+	color: whitesmoke;
+	text-shadow: 2px 2px 5px red;
 	font-family: 'Trocchi', serif;
-	font-size: 45px;
+	font-size: 50px;
 	font-weight: normal;
 	line-height: 48px;
 	margin: 24px; 
@@ -67,4 +70,6 @@ span {
 		filter: blur(0.5px);
 		-webkit-filter: blur(0.5px);
 	}
-	}	  
+	}
+	  
+			
