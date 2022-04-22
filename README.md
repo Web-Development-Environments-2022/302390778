@@ -4,4 +4,4 @@ Created by Uri Zlotkin
 my github account: urizlotkin
 30230977
 This website is about the actor Gila Almgor.
-Website domain - https://web-development-environments-2022.github.io/assignment1-urizlotkin/
+Website domain - https://web-development-environments-2022.github.io/302390778
